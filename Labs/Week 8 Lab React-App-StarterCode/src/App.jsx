@@ -1,15 +1,29 @@
-import './App.css'
-import Registration from './components/Registration'
-import Layout from './components/Layout'
 
+import "./App.css";
 
-function App() {
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Registration from "./components/Registration";
+import Login from "./components/Login";
+import Help from "./components/Help";
+
+export default function App() {
   return (
-// Replace this direct component rendering with React Router.
-    <Layout>
-      <Registration />
-    </Layout>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/help" element={<Help />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
