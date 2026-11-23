@@ -1,0 +1,6 @@
+
+# Ignore installed Node.js dependencies
+**/node_modules/
+
+# Ignore generated production builds
+**/dist/
